@@ -19,11 +19,7 @@ for i in range(100):
     if randomiser == "etter":
         befolkning = befolkning + 1
     if randomiser == "dø":
-        befolkning = befolkning -1
-        
-print(befolkning)
-x = i
-y = befolkning
-plt.plot(x,y)
-plt.show()
-        
+        befolkning = befolkning -1       
+
+
+

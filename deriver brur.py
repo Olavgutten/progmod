@@ -20,4 +20,4 @@ def deriver(f, punkt, deltaX):
     deltaY = f(punkt+deltaX)-f(punkt)
     return deltaY/deltaX
 
-print(deriver(f, punkt, 10**-4))
+print(deriver(f, punkt, 10**-4 r 3e))

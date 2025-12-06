@@ -91,17 +91,20 @@ class Spiller:
         
     def APM_snitt(self):
         tider_i_minutt = [t / 60 for t in self.tider]
-
-        handling_per_minutt = [handling / tid for handling, 
-                               tid in zip(self.handlinger, tider_i_minutt)]
-
-        apm_snitt = sum(handling_per_minutt) / len(handling_per_minutt)
-        print(f"{self.person} sitt APM-snitt er på {apm_snitt}")
+        
+        self.apm_liste = [
+        handling / tid
+        for handling, tid in zip(self.handlinger, tider_i_minutt)
+        ]
+        # snitt-APM
+        apm_snitt = sum(self.apm_liste) / len(self.apm_liste)
+        print(f"{self.person} sitt APM-snitt er: {apm_snitt}")
+        
         
     def feilrate_snitt(self):
-        feil_delt_handling = [self.feil / self.handlinger for self.feil, self.handlinger
+        self.feilrate = [self.feil / self.handlinger for self.feil, self.handlinger
                               in zip(self.feil, self.handlinger)]
-        snitt = sum(feil_delt_handling) / len(feil_delt_handling)
+        snitt = sum(self.feilrate) / len(self.feilrate)
         print(self.person, "har et feilrate snitt på", snitt)
         
     def poeng_snitt(self):
@@ -122,7 +125,7 @@ class Spiller:
         
         
         
-        
+
 
 # Oppgave b)
     # Se også tekst i word dokumentet
@@ -208,11 +211,182 @@ plt.show()
 
 
     
-# Oppgave cs
-     
+# Oppgave c og d
+    # Måten jeg gjør numerisk derivasjon her er å ta hver verdi og ta minus den
+    # forrige verdien. Da får jeg stigningstallet mellom hvert punkt og dette er
+    # den deriverte. Deretter plotter jeg dem og kan se om vi finner noen mistenkelige
+    # verdier som skiller seg ut. Vi ser etter steder hvor verdiene endrer seg 
+    # mye mer enn det typiske.
     
+jonas1 = "red"
+per1 = "green"
+
+# Poeng derivert
+# per
+per_poeng_derivert = []
+
+for i in range(0, 419):
+    derivert = p_poeng[i+1] - p_poeng[i]
+    per_poeng_derivert.append(derivert)
+x = list(range(0, 419))
+plt.plot(x, per_poeng_derivert, per1)
+plt.ylabel("Vekstfart")
+plt.xlabel("Runder")
+plt.title("Vekstfarten til Pers poeng per runde")
+plt.show()
+
+# jonas
+
+jonas_poeng_derivert = []
+
+for i in range(0, 349):
+    derivert = j_poeng[i+1] - j_poeng[i]
+    jonas_poeng_derivert.append(derivert)
+x = list(range(0, 349))
+plt.plot(x, jonas_poeng_derivert, jonas1)
+plt.ylabel("Vekstfart")
+plt.xlabel("Runder")
+plt.title("Vekstfarten til Jonas sine poeng per runde")
+plt.show()
+
+# tid derivert
+   #per
+
+per_tid_derivert = []
+
+for i in range(0, 419):
+    derivert = p_tider[i+1] - p_tider[i]
+    per_tid_derivert.append(derivert)
+x = list(range(0, 419))
+plt.plot(x, per_tid_derivert, per1)
+plt.ylabel("Vekstfart")
+plt.xlabel("Runder")
+plt.title("Vekstfarten til tid per runde for Per i sekunder")
+plt.show()
+
+# jonas
+
+jonas_tid_derivert = []
+
+for i in range(0, 349):
+    derivert = j_tider[i+1] - j_tider[i]
+    jonas_tid_derivert.append(derivert)
+x = list(range(0, 349))
+plt.plot(x, jonas_tid_derivert, jonas1)
+plt.ylabel("Vekstfart")
+plt.xlabel("Runder")
+plt.title("Vekstfarten til tid per runde for Jonas i sekunder")
+plt.show()
+
+#handlinger derivert
+# per
+per_handlinger_derivert = []
+
+for i in range(0, 419):
+    derivert = p_handlinger[i+1] - p_handlinger[i]
+    per_handlinger_derivert.append(derivert)
+x = list(range(0, 419))
+plt.plot(x, per_handlinger_derivert, per1)
+plt.ylabel("Vekstfart")
+plt.xlabel("Runder")
+plt.title("Handlinger derivert for Per")
+plt.show()
+
+# jonas
+
+jonas_handlinger_derivert = []
+
+for i in range(0, 349):
+    derivert = j_handlinger[i+1] - j_handlinger[i]
+    jonas_handlinger_derivert.append(derivert)
+x = list(range(0, 349))
+plt.plot(x, jonas_handlinger_derivert, jonas1)
+plt.ylabel("Vekstfart")
+plt.xlabel("Runder")
+plt.title("Handlinger derivert for Jonas")
+plt.show()
+
+#feil derivert 
+# per
+per_feil_derivert = []
+
+for i in range(0, 419):
+    derivert = p_feil[i+1] - p_feil[i]
+    per_feil_derivert.append(derivert)
+x = list(range(0, 419))
+plt.plot(x, per_feil_derivert, per1)
+plt.ylabel("Vekstfart")
+plt.xlabel("Runder")
+plt.title("Endring i antall feil fra runde til runde for Per")
+plt.show()
+
+# jonas
+jonas_feil_derivert = []
+
+for i in range(0, 349):
+    derivert = j_feil[i+1] - j_feil[i]
+    jonas_feil_derivert.append(derivert)
+x = list(range(0, 349))
+plt.plot(x, jonas_feil_derivert, jonas1)
+plt.ylabel("Vekstfart")
+plt.xlabel("Runder")
+plt.title("Endring i antall feil fra runde til runde for Jonas")
+plt.show()
 
 
-        
-        
-        
+#APM derivert
+# per
+per_apm_derivert = []
+
+for i in range(0, 419):
+    derivert = per.apm_liste[i+1] - per.apm_liste[i]
+    per_apm_derivert.append(derivert)
+x = list(range(0, 419))
+plt.plot(x, per_apm_derivert, per1)
+plt.ylabel("Vekstfart")
+plt.xlabel("Runder")
+plt.title("Vekstfart til APM per runde for Per")
+plt.show()
+
+# jonas
+jonas_apm_derivert = []
+
+for i in range(0, 349):
+    derivert = jonas.apm_liste[i+1] - jonas.apm_liste[i]
+    jonas_apm_derivert.append(derivert)
+x = list(range(0, 349))
+plt.plot(x, jonas_apm_derivert, jonas1)
+plt.ylabel("Vekstfart")
+plt.xlabel("Runder")
+plt.title("Vekstfart til APM per runde for Jonas")
+plt.show()
+
+#feilrate derivert
+# per
+per_feilrate_derivert = []
+
+for i in range(0, 419):
+    derivert = per.feilrate[i+1] - per.feilrate[i]
+    per_feilrate_derivert.append(derivert)
+x = list(range(0, 419))
+plt.plot(x, per_feilrate_derivert, per1)
+plt.ylabel("Vekstfart")
+plt.xlabel("Runder")
+plt.title("Feilrate derivert for Per")
+plt.show()
+
+# jonas
+jonas_feilrate_derivert = []
+
+for i in range(0, 349):
+    derivert = jonas.feilrate[i+1] - jonas.feilrate[i]
+    jonas_feilrate_derivert.append(derivert)
+x = list(range(0, 349))
+plt.plot(x, jonas_feilrate_derivert, jonas1)
+plt.ylabel("Vekstfart")
+plt.xlabel("Runder")
+plt.title("Feilrate derivert for Jonas")
+plt.show()
+
+# Kommentar til funnene ligger i word dokument.
+

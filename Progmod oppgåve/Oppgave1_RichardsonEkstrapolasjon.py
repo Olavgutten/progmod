@@ -116,7 +116,7 @@ print("Den deriverte i punktet x = 0.35 er tilnærmet lik:", q(x))
 
 
 
-   
+
 
 
 

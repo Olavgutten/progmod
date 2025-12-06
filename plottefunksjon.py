@@ -6,23 +6,27 @@ Created on Sun Nov 30 15:46:28 2025
 @author: ofurn
 """
 
-# oppgave til siste lside i innføring programmering
+# eg vil lage en klasse for å lade telefonen
 
-import matplotlib.pyplot as plt
-def f(x):
-    return (1-2*x) / (x-2)
-x = 8
-y = []
-b = []
-while x >= -8:
-    if(x != 2):
-        print(x, f(x))  
-        y.append(f(x))
-        b.append(x)
-    x = x - 1
-x = b
-plt.plot(x, y)
-plt.show()
+class telefon:
+    def __init__(self, batteri):
+        self.kapasitet = batteri
+        self.innhold = 0
+        
+    def lade(self, antprosent):
+        self.oppladet = self.innhold + antprosent
+        if self.oppladet >= self.kapasitet:
+            print("Nå er mobilen fulladet")
+            
+    def tøm(self, antprosent):
+        self.strøm = self.innhold - antprosent
+        if self.strøm < self.innhold:
+            print("Mobilen er tom for strøm")
+            
+    def sjekkStrøm(self):
+        print(f"Det er {self.innhold}% igjen i telefonen")
+        
+
 
 
 

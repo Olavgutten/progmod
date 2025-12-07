@@ -22,7 +22,9 @@ delta_x = 1E-7
 
 print("Den deriverte med sentraldifferansen er tilnærmet lik:", g(x, delta_x))
 print("")
+
 # Oppgave b)
+
 print("Oppgave b)")
 
 def r(x):

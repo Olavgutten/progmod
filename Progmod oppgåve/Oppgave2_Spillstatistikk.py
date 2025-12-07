@@ -229,10 +229,10 @@ for i in range(0, 419):
     derivert = p_poeng[i+1] - p_poeng[i]
     per_poeng_derivert.append(derivert)
 x = list(range(0, 419))
-plt.plot(x, per_poeng_derivert, per1)
-plt.ylabel("Vekstfart")
-plt.xlabel("Runder")
-plt.title("Vekstfarten til Pers poeng per runde")
+plt.hist(per_poeng_derivert, bins=30, color = "green")
+plt.ylabel("Antall")
+plt.xlabel("Deriverte verdier")
+plt.title("Poeng derivert for Per")
 plt.show()
 
 # jonas
@@ -243,10 +243,10 @@ for i in range(0, 349):
     derivert = j_poeng[i+1] - j_poeng[i]
     jonas_poeng_derivert.append(derivert)
 x = list(range(0, 349))
-plt.plot(x, jonas_poeng_derivert, jonas1)
-plt.ylabel("Vekstfart")
-plt.xlabel("Runder")
-plt.title("Vekstfarten til Jonas sine poeng per runde")
+plt.hist(jonas_poeng_derivert, bins=30, color = "red")
+plt.ylabel("Antall")
+plt.xlabel("Deriverte verdier")
+plt.title("Poeng derivert for Jonas")
 plt.show()
 
 # tid derivert
@@ -258,10 +258,10 @@ for i in range(0, 419):
     derivert = p_tider[i+1] - p_tider[i]
     per_tid_derivert.append(derivert)
 x = list(range(0, 419))
-plt.plot(x, per_tid_derivert, per1)
-plt.ylabel("Vekstfart")
-plt.xlabel("Runder")
-plt.title("Vekstfarten til tid per runde for Per i sekunder")
+plt.hist(per_tid_derivert, bins=30, color = "green")
+plt.ylabel("Antall")
+plt.xlabel("Deriverte verdier")
+plt.title("Tid derivert for Per")
 plt.show()
 
 # jonas
@@ -272,10 +272,10 @@ for i in range(0, 349):
     derivert = j_tider[i+1] - j_tider[i]
     jonas_tid_derivert.append(derivert)
 x = list(range(0, 349))
-plt.plot(x, jonas_tid_derivert, jonas1)
-plt.ylabel("Vekstfart")
-plt.xlabel("Runder")
-plt.title("Vekstfarten til tid per runde for Jonas i sekunder")
+plt.hist(jonas_tid_derivert, bins=30, color = "red")
+plt.ylabel("Antall")
+plt.xlabel("Deriverte verdier")
+plt.title("Tid derivert for Jonas")
 plt.show()
 
 #handlinger derivert
@@ -286,9 +286,9 @@ for i in range(0, 419):
     derivert = p_handlinger[i+1] - p_handlinger[i]
     per_handlinger_derivert.append(derivert)
 x = list(range(0, 419))
-plt.plot(x, per_handlinger_derivert, per1)
-plt.ylabel("Vekstfart")
-plt.xlabel("Runder")
+plt.hist(per_handlinger_derivert, bins=30, color = "green")
+plt.ylabel("Antall")
+plt.xlabel("Deriverte verdier")
 plt.title("Handlinger derivert for Per")
 plt.show()
 
@@ -300,9 +300,9 @@ for i in range(0, 349):
     derivert = j_handlinger[i+1] - j_handlinger[i]
     jonas_handlinger_derivert.append(derivert)
 x = list(range(0, 349))
-plt.plot(x, jonas_handlinger_derivert, jonas1)
-plt.ylabel("Vekstfart")
-plt.xlabel("Runder")
+plt.hist(jonas_handlinger_derivert, bins=30, color = "red")
+plt.ylabel("Antall")
+plt.xlabel("Deriverte verdier")
 plt.title("Handlinger derivert for Jonas")
 plt.show()
 
@@ -314,10 +314,10 @@ for i in range(0, 419):
     derivert = p_feil[i+1] - p_feil[i]
     per_feil_derivert.append(derivert)
 x = list(range(0, 419))
-plt.plot(x, per_feil_derivert, per1)
-plt.ylabel("Vekstfart")
-plt.xlabel("Runder")
-plt.title("Endring i antall feil fra runde til runde for Per")
+plt.hist(per_feil_derivert, bins=30, color = "green")
+plt.ylabel("Antall")
+plt.xlabel("Deriverte verdier")
+plt.title("Feil derivert for Per")
 plt.show()
 
 # jonas
@@ -327,10 +327,10 @@ for i in range(0, 349):
     derivert = j_feil[i+1] - j_feil[i]
     jonas_feil_derivert.append(derivert)
 x = list(range(0, 349))
-plt.plot(x, jonas_feil_derivert, jonas1)
-plt.ylabel("Vekstfart")
-plt.xlabel("Runder")
-plt.title("Endring i antall feil fra runde til runde for Jonas")
+plt.hist(jonas_feil_derivert, bins=30, color = "red")
+plt.ylabel("Antall")
+plt.xlabel("Deriverte verdier")
+plt.title("Feil derivert for Jonas")
 plt.show()
 
 
@@ -342,10 +342,10 @@ for i in range(0, 419):
     derivert = per.apm_liste[i+1] - per.apm_liste[i]
     per_apm_derivert.append(derivert)
 x = list(range(0, 419))
-plt.plot(x, per_apm_derivert, per1)
-plt.ylabel("Vekstfart")
-plt.xlabel("Runder")
-plt.title("Vekstfart til APM per runde for Per")
+plt.hist(per_apm_derivert, bins=30, color = "green")
+plt.ylabel("Antall")
+plt.xlabel("Deriverte verdier")
+plt.title("APM derivert for Per")
 plt.show()
 
 # jonas
@@ -355,10 +355,10 @@ for i in range(0, 349):
     derivert = jonas.apm_liste[i+1] - jonas.apm_liste[i]
     jonas_apm_derivert.append(derivert)
 x = list(range(0, 349))
-plt.plot(x, jonas_apm_derivert, jonas1)
-plt.ylabel("Vekstfart")
-plt.xlabel("Runder")
-plt.title("Vekstfart til APM per runde for Jonas")
+plt.hist(jonas_apm_derivert, bins=30, color = "red")
+plt.ylabel("Antall")
+plt.xlabel("Deriverte verdier")
+plt.title("APM derivert for Jonas")
 plt.show()
 
 #feilrate derivert
@@ -369,9 +369,9 @@ for i in range(0, 419):
     derivert = per.feilrate[i+1] - per.feilrate[i]
     per_feilrate_derivert.append(derivert)
 x = list(range(0, 419))
-plt.plot(x, per_feilrate_derivert, per1)
-plt.ylabel("Vekstfart")
-plt.xlabel("Runder")
+plt.hist(per_feilrate_derivert, bins=30, color = "green")
+plt.ylabel("Antall")
+plt.xlabel("Deriverte verdier")
 plt.title("Feilrate derivert for Per")
 plt.show()
 
@@ -382,11 +382,16 @@ for i in range(0, 349):
     derivert = jonas.feilrate[i+1] - jonas.feilrate[i]
     jonas_feilrate_derivert.append(derivert)
 x = list(range(0, 349))
-plt.plot(x, jonas_feilrate_derivert, jonas1)
-plt.ylabel("Vekstfart")
-plt.xlabel("Runder")
+plt.hist(jonas_feilrate_derivert, bins=30, color = "red")
+plt.ylabel("Antall")
+plt.xlabel("Deriverte verdier")
 plt.title("Feilrate derivert for Jonas")
 plt.show()
 
-# Kommentar til funnene ligger i word dokument.
+# Kommentar:
+    # Den eneste grafen jeg synes ser mistenkelig ut er Poeng derivert for per.
+    # Her har han stort sett veldig jevnt derivert så det ligger som oftest nærme
+    # 0, men han har én runde som skiller seg veldig ut og her helt oppe mot 2500
+    # det kan ha vært en runde han hadde flaks, eller var veldig god, men det kan 
+    # også ses på som juks siden den skiller seg veldig ut fra resten.
 
